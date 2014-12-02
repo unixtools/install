@@ -118,9 +118,8 @@ rpmkeys --verbose --import /etc/pki/rpm-gpg/RPM-GPG-KEY-*
 #
 # Generate and run the yum script
 #
-curl -o /tmp/added-rpms http://$KSHOST/fedora/20/files/added-rpms
 echo "upgrade" > /tmp/yum-cmds.txt
-cat /tmp/added-rpms | awk '{ print "install " $1 }' >> /tmp/yum-cmds.txt
+cat /root/install/fc20/files/added-rpms | awk '{ print "install " $1 }' >> /tmp/yum-cmds.txt
 echo "install google-chrome-stable" >> /tmp/yum-cmds.txt
 echo "install yum-updatesd" >> /tmp/yum-cmds.txt
 echo "run" >> /tmp/yum-cmds.txt
