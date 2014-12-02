@@ -128,10 +128,11 @@ echo "exit" >> /tmp/yum-cmds.txt
 yum -y --nogpgcheck shell </tmp/yum-cmds.txt
 
 # Enable yum-cron
-perl -pi -e "s/do_update = no/do_update = yes/go" /etc/yum/yum-updatesd.conf
-perl -pi -e "s/emit_via = dbus/emit_via = syslog/go" /etc/yum/yum-updatesd.conf
-chkconfig yum-updatesd on
-service yum-updatesd restart
+# Leave off for now
+#perl -pi -e "s/do_update = no/do_update = yes/go" /etc/yum/yum-updatesd.conf
+#perl -pi -e "s/emit_via = dbus/emit_via = syslog/go" /etc/yum/yum-updatesd.conf
+#chkconfig yum-updatesd on
+#service yum-updatesd restart
 
 # Make wireshark usable by all users
 chmod 4755 /usr/sbin/dumpcap
